@@ -1,0 +1,9 @@
+{
+  "name": "uber_clone_server",
+  "version": "1.0.0",
+  "description": "Server for the Uber Clone Course on Nomad Academy. GraphQL, Typescript, NodeJS",
+  "main": "index.js",
+  "repository": "https://github.com/yykdev/uber_clone_server.git",
+  "author": "yykdev <assavictory@gmail.com>",
+  "license": "MIT"
+}
