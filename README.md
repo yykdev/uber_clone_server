@@ -47,3 +47,11 @@ $ cd src && nodemon --exec ts-node index.ts
 works
 [nodemon] clean exit - waiting for changes before restart
 ```
+
+=> nodemon이 ts 확장자와 graphql 확장자를 감시하도록( -e ) 옵션 추가
+
+```
+"scripts": {
+    "dev": "... -e ts,graphql"
+}
+```
