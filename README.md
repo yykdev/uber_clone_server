@@ -21,3 +21,17 @@ Definitely Typed
 
 예) node 라이브러리의 함수나 옵션에 type을 셋팅하여 typescript에서도 사용할 수 있도록 셋팅
 ```
+
+> src/index.ts 셋팅, package.json의 scrpit 항목 셋팅
+
+```
+"scripts": {
+    "dev": "cd src && nodemon --exec ts-node index.ts"
+}
+
+=> dev 명령 실행시 src 디렉토리로 들어간 후 ( cd src && )
+
+nodemon을 호출하여 저장 할 때마다 서버를 갱신 하도록 하고 ( nodemon )
+
+index.ts를 ts-node로 실행 한다. ( --exec ts-node index.ts )
+```
