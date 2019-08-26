@@ -28,10 +28,22 @@ Definitely Typed
 "scripts": {
     "dev": "cd src && nodemon --exec ts-node index.ts"
 }
+```
 
 => dev 명령 실행시 src 디렉토리로 들어간 후 ( cd src && )
 
 nodemon을 호출하여 저장 할 때마다 서버를 갱신 하도록 하고 ( nodemon )
 
 index.ts를 ts-node로 실행 한다. ( --exec ts-node index.ts )
+
+```
+➜  uber_clone_server git:(master) yarn dev
+yarn run v1.17.0
+$ cd src && nodemon --exec ts-node index.ts
+[nodemon] 1.19.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `ts-node index.ts`
+works
+[nodemon] clean exit - waiting for changes before restart
 ```
