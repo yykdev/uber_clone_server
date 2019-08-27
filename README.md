@@ -84,3 +84,9 @@ helmet은 보안을 위한 미들웨어이다.
 ```
 cors, helmet, morgan 라이브러리 각각의 type을 설치
 ```
+
+> yarn add graphql-tools merge-graphql-schemas
+
+```
+모든 폴더의 resolvers 파일을 찾아 하나로 합쳐서 graphql에 입력
+```
