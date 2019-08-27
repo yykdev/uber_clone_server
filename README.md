@@ -78,3 +78,9 @@ helmet은 보안을 위한 미들웨어이다.
 
 위험하지 않다고 판단 되면 요청을 계속 진행 한다.
 ```
+
+> yarn add @types/cors @types/helmet @types/morgan --dev
+
+```
+cors, helmet, morgan 라이브러리 각각의 type을 설치
+```
