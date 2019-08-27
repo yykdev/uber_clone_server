@@ -1,5 +1,9 @@
 # uber_clone_server
 
+Server for the Uber Clone Course on Nomad Academy. GraphQL, Typescript, NodeJS, logger
+
+---
+
 > yarn init
 
 > yarn add typescript ts-node nodemon --dev
@@ -63,4 +67,14 @@ graphql-yoga
 
 graphql 로 개발 환경을 만들어줌.
 create-react-app 과 유사한 역할을 함.
+```
+
+> yarn add helmet morgan cors
+
+```
+helmet은 보안을 위한 미들웨어이다.
+
+요청 때마다 미들웨어가 요청을 잠시 멈추고 검사한 후에,
+
+위험하지 않다고 판단 되면 요청을 계속 진행 한다.
 ```
