@@ -55,3 +55,12 @@ works
     "dev": "... -e ts,graphql"
 }
 ```
+
+> yarn add graphql-yoga
+
+```
+graphql-yoga
+
+graphql 로 개발 환경을 만들어줌.
+create-react-app 과 유사한 역할을 함.
+```
