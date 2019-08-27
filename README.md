@@ -90,3 +90,17 @@ cors, helmet, morgan 라이브러리 각각의 type을 설치
 ```
 모든 폴더의 resolvers 파일을 찾아 하나로 합쳐서 graphql에 입력
 ```
+
+> yarn add graphql-to-typescript gql-merge --dev
+
+```
+graphql과 typescript, javascript 가 연결 되지 않았을 경우
+
+각각의 리턴되는 값의 타입이 무엇인지 알려주지 않아
+
+서로 연결된 부분에서 타입이 일치 하지 않을 때 오류가 발생 한 후 찾을 수 밖에 없다.
+
+위 라이브러리를 설치하여 각각을 연결 해 주면 서로 리턴타입을 인지 하여
+
+코딩 시 바로 알 수 있다.
+```
