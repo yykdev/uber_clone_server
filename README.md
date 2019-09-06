@@ -106,3 +106,9 @@ graphql과 typescript, javascript 가 연결 되지 않았을 경우
 
 => graphql의 리턴 값의 타입과 typescript의 리턴 타입을 동기화
 ```
+
+> yarn add typeorm
+
+> yarn add pg
+
+> yarn add dotenv
