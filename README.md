@@ -109,6 +109,35 @@ graphql과 typescript, javascript 가 연결 되지 않았을 경우
 
 > yarn add typeorm
 
+```
+TypeScript 용 ORM
+
+- ORM
+객체 지향 프로그래밍은 클래스를 사용하고, 관계형 데이터베이스는 테이블을 사용하는데
+둘 사이의 호환 되지 않는 데이터를 변환 해 주는 것을 의미.
+```
+
 > yarn add pg
 
+```
+postgreSQL 라이브러리
+```
+
 > yarn add dotenv
+
+```
+.env 파일을 읽어들일 수 있도록 하는 라이브러리
+```
+
+> yarn add class-validator
+
+```
+typeORM 의 Entity(model) 선언시 유효성 검사 라이브러리
+```
+
+> yarn add bcrypt
+> yarn add @types/bcrypt --dev
+
+```
+암호화 라이브러리
+```

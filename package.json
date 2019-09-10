@@ -7,6 +7,7 @@
   "author": "yykdev <assavictory@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.6",
     "@types/helmet": "^0.0.44",
     "@types/morgan": "^1.7.37",
@@ -25,6 +26,8 @@
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "class-validator": "^0.10.0",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "graphql-tools": "^4.0.5",
