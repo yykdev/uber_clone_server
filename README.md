@@ -148,3 +148,10 @@ typeORM 의 Entity(model) 선언시 유효성 검사 라이브러리
 ```
 글로벌 문자메시지, 통화 API 서비스
 ```
+
+> yarn add jsonwebtoken
+> yarn add @types/jsonwebtoken --dev
+
+```
+JWT 라이브러리 설치
+```
