@@ -4,6 +4,7 @@ import {
     EmailSignInMutationArgs,
     EmailSignInResponse
 } from "../../../types/graph";
+import createJWT from "../../../utils/createJWT";
 
 const resolvers: Resolvers = {
     Mutation: {
@@ -24,10 +25,12 @@ const resolvers: Resolvers = {
 
                 const checkPassword = await user.camparePassword(password);
                 if (checkPassword) {
+                    const token = createJWT(user.id);
+
                     return {
                         ok: true,
                         error: null,
-                        token: "Coming soon"
+                        token
                     };
                 } else {
                     return {
