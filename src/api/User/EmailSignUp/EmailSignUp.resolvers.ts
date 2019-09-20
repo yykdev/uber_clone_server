@@ -37,7 +37,7 @@ const resolvers: Resolvers = {
                                     payload: newUser.email,
                                     target: "EMAIL"
                                 }
-                            );
+                            ).save();
 
                             // mailgun 의 유료 계정 전환 후 to 변경 필요 함
                             await sendVerificationEmail(

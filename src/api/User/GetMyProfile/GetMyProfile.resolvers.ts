@@ -1,9 +1,9 @@
 import { Resolvers } from "../../../types/resolvers";
-import authResolver from "../../../utils/authResolver";
+import privateResolver from "../../../utils/privateResolver";
 
 const resolvers: Resolvers = {
     Query: {
-        GetMyProfile: authResolver(async (_, __, { req }) => {
+        GetMyProfile: privateResolver(async (_, __, { req }) => {
             const { user } = req;
             return {
                 ok: true,
