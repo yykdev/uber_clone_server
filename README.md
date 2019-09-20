@@ -155,3 +155,5 @@ typeORM 의 Entity(model) 선언시 유효성 검사 라이브러리
 ```
 JWT 라이브러리 설치
 ```
+
+> yarn add mailgun-js && yarn add @types/mailgun-js --dev
