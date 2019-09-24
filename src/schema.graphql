@@ -1,7 +1,12 @@
 type Chat {
   id: Int!
   messages: [Message]
-  participants: [User]
+  passengerId: Int!
+  passenger: User!
+  driverId: Int
+  driver: User!
+  rideId: Int
+  ride: Ride!
   createdAt: String!
   updatedAt: String!
 }
@@ -9,6 +14,7 @@ type Chat {
 type Message {
   id: Int!
   text: String!
+  chatId: Int
   chat: Chat!
   user: User!
   createdAt: String!
@@ -24,7 +30,6 @@ type Mutation {
   AddPlace(name: String!, lat: Float!, lng: Float!, address: String!, isFav: Boolean!): AddPlaceResponse!
   DeletePlace(placeId: Int!): DeletePlaceResponse!
   EditPlace(placeId: Int!, name: String!, isFav: Boolean): EditPlaceResponse!
-  GetMyPlace: GetMyPlaceResponse!
   CompleteEmailVerification(key: String!): CompleteEmailVerificationResponse!
   CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
   EmailSignIn(email: String!, password: String!): EmailSignInResponse!
@@ -47,10 +52,16 @@ type EditPlaceResponse {
   error: String
 }
 
-type GetMyPlaceResponse {
+type GetMyPlacesResponse {
   ok: Boolean!
   error: String
   places: [Place]
+}
+
+type Query {
+  GetMyPlaces: GetMyPlacesResponse!
+  GetMyProfile: GetMyProfileResponse!
+  GetNearbyDrivers: GetNearbyDriversResponse!
 }
 
 type Place {
@@ -77,8 +88,12 @@ type Ride {
   price: Float!
   distance: String!
   duration: String!
-  passenger: User!
+  driverId: Int
   driver: User!
+  passengerId: Int!
+  passenger: User!
+  chat: Chat
+  chatId: Int
   createdAt: String!
   updatedAt: String!
 }
@@ -118,8 +133,10 @@ type GetMyProfileResponse {
   user: User
 }
 
-type Query {
-  GetMyProfile: GetMyProfileResponse!
+type GetNearbyDriversResponse {
+  ok: Boolean!
+  error: String
+  drivers: [User]
 }
 
 type ReportMovementReponse {
@@ -151,10 +168,11 @@ type User {
   lastLat: Float
   lastOrientation: Float
   fbId: String
-  chat: Chat
   messages: [Message]
   ridesAsPassenger: [Ride]
   ridesAsDriver: [Ride]
+  chatsAsDriver: [Chat]
+  chatsAsPassenger: [Chat]
   places: [Place]
   createdAt: String!
   updatedAt: String

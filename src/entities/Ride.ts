@@ -5,10 +5,13 @@ import {
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
-    ManyToOne
+    ManyToOne,
+    OneToOne,
+    JoinColumn
 } from "typeorm";
 import { rideStatus } from "src/types/types";
 import User from "./User";
+import Chat from "./Chat";
 
 @Entity()
 class Ride extends BaseEntity {
@@ -22,7 +25,7 @@ class Ride extends BaseEntity {
     status: rideStatus;
 
     @Column({ type: "text" })
-    pickUpAddress: String;
+    pickUpAddress: string;
 
     @Column({ type: "double precision", default: 0 })
     pickUpLat: number;
@@ -31,7 +34,7 @@ class Ride extends BaseEntity {
     pickUpLng: number;
 
     @Column({ type: "text" })
-    dropOffAddress: String;
+    dropOffAddress: string;
 
     @Column({ type: "double precision", default: 0 })
     dropOffLat: number;
@@ -43,22 +46,35 @@ class Ride extends BaseEntity {
     price: number;
 
     @Column({ type: "text" })
-    distance: String;
+    distance: string;
 
     @Column({ type: "text" })
-    duration: String;
+    duration: string;
+
+    @Column({ nullable: true })
+    passengerId: number;
 
     @ManyToOne(type => User, user => user.ridesAsPassenger)
     passenger: User;
 
-    @ManyToOne(type => User, user => user.ridesAsDriver)
+    @Column({ nullable: true })
+    driverId: number;
+
+    @ManyToOne(type => User, user => user.ridesAsDriver, { nullable: true })
     driver: User;
 
+    @Column({ nullable: true })
+    chatId: number;
+
+    @OneToOne(type => Chat, chat => chat.ride, { nullable: true })
+    @JoinColumn()
+    chat: Chat;
+
     @CreateDateColumn()
-    createdAt: String;
+    createdAt: string;
 
     @UpdateDateColumn()
-    updatedAt: String;
+    updatedAt: string;
 }
 
 export default Ride;

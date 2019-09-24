@@ -1,12 +1,12 @@
 import { Resolvers } from "../../../types/resolvers";
 import privateResolver from "../../../utils/privateResolver";
-import { GetMyPlaceResponse } from "../../../types/graph";
+import { GetMyPlacesResponse } from "../../../types/graph";
 import User from "../../../entities/User";
 
 const resolvers: Resolvers = {
     Query: {
-        GetMyPlace: privateResolver(
-            async (_, __, { req }): Promise<GetMyPlaceResponse> => {
+        GetMyPlaces: privateResolver(
+            async (_, __, { req }): Promise<GetMyPlacesResponse> => {
                 try {
                     const user = await User.findOne(
                         { id: req.user.id },

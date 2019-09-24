@@ -15,20 +15,23 @@ class Message extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column({ type: "text" })
+    text: string;
+
+    @Column({ nullable: true })
+    chatId: number;
+
     @ManyToOne(type => Chat, chat => chat.messages)
     chat: Chat;
 
     @ManyToOne(type => User, user => user.messages)
     user: User;
 
-    @Column({ type: "text" })
-    text: String;
-
     @CreateDateColumn()
-    createdAt: String;
+    createdAt: string;
 
     @UpdateDateColumn()
-    updatedAt: String;
+    updatedAt: string;
 }
 
 export default Message;
