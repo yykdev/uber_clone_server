@@ -13,14 +13,16 @@ const resolvers: Resolvers = {
             async (
                 _,
                 args: ReportMovementMutationArgs,
-                { req }
+                { req, pubSub }
             ): Promise<ReportMovementReponse> => {
                 const user: User = req.user;
                 const notNull = cleanNullArgs(args);
 
                 try {
                     await User.update({ id: user.id }, { ...notNull });
-
+                    pubSub.publish("driverUpdate", {
+                        DriversSubscription: user
+                    });
                     return {
                         ok: true,
                         error: null
