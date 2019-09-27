@@ -1,0 +1,19 @@
+type UpdateRideStatusResponse {
+    ok: Boolean!
+    error: String
+}
+
+enum StatusOptions {
+    ACCEPTED
+    CANCELED
+    FINISHED
+    REQUESTING
+    ONROUTE
+}
+
+type Mutation {
+    UpdateRideStatus(
+        rideID: Int!
+        status: StatusOptions!
+    ): UpdateRideStatusResponse!
+}

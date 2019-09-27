@@ -32,6 +32,7 @@ type Mutation {
   EditPlace(placeId: Int!, name: String!, isFav: Boolean): EditPlaceResponse!
   GetNearbyRide: GetNearbyRideResponse!
   RequestRide(pickUpAddress: String!, pickUpLat: Float!, pickUpLng: Float!, dropOffAddress: String!, dropOffLat: Float!, dropOffLng: Float!, price: Float!, distance: String!, duration: String!): RequestRideResponse!
+  UpdateRideStatus(rideID: Int!, status: StatusOptions!): UpdateRideStatusResponse!
   CompleteEmailVerification(key: String!): CompleteEmailVerificationResponse!
   CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
   EmailSignIn(email: String!, password: String!): EmailSignInResponse!
@@ -115,6 +116,19 @@ type Ride {
   chatId: Int
   createdAt: String!
   updatedAt: String!
+}
+
+type UpdateRideStatusResponse {
+  ok: Boolean!
+  error: String
+}
+
+enum StatusOptions {
+  ACCEPTED
+  CANCELED
+  FINISHED
+  REQUESTING
+  ONROUTE
 }
 
 type CompleteEmailVerificationResponse {
